@@ -1,23 +1,21 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const minifycss = require('gulp-minify-css');
-const rename = require("gulp-rename");
-const uglify = require("gulp-uglify");
-const concat = require('gulp-concat');
-const es = require('event-stream');
-const sourcemaps = require("gulp-sourcemaps");
+let gulp = require('gulp'),
+      sass = require('gulp-sass'),
+      autoprefixer = require('gulp-autoprefixer'),
+      cleancss = require('gulp-clean-css'),
+      rename = require("gulp-rename"),
+      uglify = require("gulp-uglify"),
+      concat = require('gulp-concat'),
+      sourcemaps = require("gulp-sourcemaps");
 
 gulp.task('sass', () => {
-  gulp.src(['./node_modules/bootstrap/scss/bootstrap.scss',
+  gulp.src([
+    './node_modules/bootstrap/scss/bootstrap.scss',
     './node_modules/sierra-library/src/sierra.scss',
-    './src/scss/style.scss'])
+    './src/scss/style.scss'])   
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer('last 10 version'))
-    .pipe(minifycss({
-        keepSpecialComments: 0
-    }))
+    .pipe(cleancss({level: {1: {specialComments: 0}}}))
     .pipe(concat('bundle.min.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('www/css'));
