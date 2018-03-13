@@ -15,9 +15,7 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed',
-      style: 'expanded',
-      sourceComments: false,
-      errLogToConsole: true
+      sourceComments: false
     }))
     .pipe(minifycss())
     .pipe(concat('bundle.min.css'))
