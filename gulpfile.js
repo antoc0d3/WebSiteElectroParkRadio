@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
-const merge = require('merge2');
 const minifycss = require('gulp-minify-css');
 const rename = require("gulp-rename");
 const uglify = require("gulp-uglify");
@@ -14,8 +13,14 @@ gulp.task('sass', function () {
     './node_modules/sierra-library/src/sierra.scss',
     './src/scss/style.scss'])
     .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(concat('electroparkradio.bundle.min.css'))
+    .pipe(sass({
+      outputStyle: 'compressed',
+      style: 'expanded',
+      sourceComments: false,
+      errLogToConsole: true
+    }))
+    .pipe(minifycss())
+    .pipe(concat('bundle.min.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('www/css'));
 });
@@ -36,7 +41,7 @@ gulp.task('js', () => {
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(concat('sc.js'))
-    .pipe(rename('electroparkradio.bundle.min.js'))
+    .pipe(rename('bundle.min.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./www/js/'));
 });
