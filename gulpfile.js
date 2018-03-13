@@ -8,16 +8,16 @@ const concat = require('gulp-concat');
 const es = require('event-stream');
 const sourcemaps = require("gulp-sourcemaps");
 
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   gulp.src(['./node_modules/bootstrap/scss/bootstrap.scss',
     './node_modules/sierra-library/src/sierra.scss',
     './src/scss/style.scss'])
     .pipe(sourcemaps.init())
-    .pipe(sass({
-      outputStyle: 'compressed',
-      sourceComments: false
+    .pipe(sass())
+    .pipe(autoprefixer('last 10 version'))
+    .pipe(minifycss({
+        keepSpecialComments: 0
     }))
-    .pipe(minifycss())
     .pipe(concat('bundle.min.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('www/css'));
