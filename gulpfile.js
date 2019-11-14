@@ -7,7 +7,7 @@ let gulp = require('gulp'),
       concat = require('gulp-concat'),
       sourcemaps = require("gulp-sourcemaps");
 
-gulp.task('sass', () => {
+gulp.task('css', () => {
   gulp.src([
     './node_modules/bootstrap/scss/bootstrap.scss',
     './node_modules/sierra-library/src/sierra.scss',
