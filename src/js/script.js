@@ -505,18 +505,16 @@ var _0x6367=["\x41\x49\x7A\x61\x53\x79\x44\x46\x4B\x43\x54\x62\x65\x72\x32\x4A\x
     function scrollBarActive() {
         if ($(window).width() > 991) {
         NiceScrollChange(".chat-timeline , body");
-        $('.imagenpost').parallax("60%", 0.3);
+       // $('.imagenpost').parallax("60%", 0.3);
         }
     }
 
+
     playerAudio.jPlayer({
-        ready: function (event) {
-            var $time = $(event.jPlayer.options.cssSelectorAncestor + " .jp-current-time");
-            $(this).data('$time', $time).jPlayer('setMedia', {
-                mp3: 'http://87.98.153.24:80/mxHD.mp3'
-                //mp3: 'http://213.251.190.165:80/mxAAC64.mp3',
-                //oga: ''
-            });
+        ready: function(event) {
+            $(this).jPlayer("setMedia", {
+                mp3: "http://87.98.153.24:80/mxHD.mp3/;",
+            }).jPlayer("play");
         },
         timeupdate: '',
         durationchange: '',
@@ -526,6 +524,7 @@ var _0x6367=["\x41\x49\x7A\x61\x53\x79\x44\x46\x4B\x43\x54\x62\x65\x72\x32\x4A\x
         },
         swfPath: 'lib',
         supplied: 'mp3',
+        autoPlay: true,
         smoothPlayBar: true,
         keyEnabled: true,
         wmode: 'window'
@@ -541,45 +540,6 @@ var _0x6367=["\x41\x49\x7A\x61\x53\x79\x44\x46\x4B\x43\x54\x62\x65\x72\x32\x4A\x
     scrollBarActive();
     tabsFooterInitialize();
 
-
-  var appCache = window.applicationCache;
-
-  // Fired after the first cache of the manifest.
-  appCache.addEventListener('cached', handleCacheEvent, false);
-
-  // Checking for an update. Always the first event fired in the sequence.
-  appCache.addEventListener('checking', handleCacheEvent, false);
-
-  // An update was found. The browser is fetching resources.
-  appCache.addEventListener('downloading', handleCacheEvent, false);
-
-  // The manifest returns 404 or 410, the download failed,
-  // or the manifest changed while the download was in progress.
-  appCache.addEventListener('error', handleCacheError, false);
-
-  // Fired after the first download of the manifest.
-  appCache.addEventListener('noupdate', handleCacheEvent, false);
-
-  // Fired if the manifest file returns a 404 or 410.
-  // This results in the application cache being deleted.
-  appCache.addEventListener('obsolete', handleCacheEvent, false);
-
-  // Fired for each resource listed in the manifest as it is being fetched.
-  appCache.addEventListener('progress', handleCacheEvent, false);
-
-  // Fired when the manifest resources have been newly redownloaded.
-  appCache.addEventListener('updateready', handleCacheEvent, false);
-
-
-function handleCacheEvent(e) {
-  console.log(e);
-}
-
-function handleCacheError(e) {
-  log('AppCache error: ' + e.data);
-}
-
-var data = document.getElementById('data');
 
 function log(text) {
   console.log(text);

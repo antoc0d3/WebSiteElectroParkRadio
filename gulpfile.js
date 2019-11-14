@@ -28,7 +28,6 @@ gulp.task('js', () => {
     "./src/js/jquery.jplayer.js",
     "./src/js/draggabilly.pkgd.min.js",
     "./src/js/jquery.nicescroll.min.js",
-    "./src/js/jquery.parallax-1.1.3.js",
     "./src/js/jquery.stickit.js",
     "./src/js/menu.min.js",
     "./src/js/jquery.validate.min.js",
