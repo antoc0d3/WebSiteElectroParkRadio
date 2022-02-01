@@ -21,7 +21,7 @@ function onPlayerReady() {
     $("#tracklist-options-x").html('<div id="video-options"><button class="button button-outlined button-small block-mobile" id="tracklist-video-playlist"><i class="fa fa-mouse-pointer"></i>  TEMA</button>' + '<button class="button button-outlined button-small block-mobile" id="tracklist-video-load"><i class="fa fa-list-ul"></i> Tracklist</button><button class="button button-outlined button-small block-mobile" id="tracklist-video-float"><i class="fa fa-window-restore"></i> Flotar</button>' + '<button class="button button-outlined button-small block-mobile" id="tracklist-video-repeat"><i class="fa fa-undo"></i> Repetir</button></div>');
     var VIDEO_TRACKLIST_ID = $("#tracklist-video").attr("data-id-video");
     console.log(VIDEO_TRACKLIST_ID)
-    var API_KEY_YOUTUBE = 'AIzaSyD-TqaFJZdmV7xxYk1Whd9UErMnTekBzrE';
+    var API_KEY_YOUTUBE = 'AIzaSyBd42KtJDiiEunzFzOHojY7GymrLHlsccQ';
 
     var time_update_interval = 0;
     var timeConvertion = 0;
