@@ -1,20 +1,24 @@
 # ElectroParkRadio
 ------------
-ElectroParkRadio antiguamente llamado ProyectoFM, fue una radio en linea en los años 2013. Estacion de musica electronica en vivo, con un chat en tiempo real bajado en NodeJS y websocket.
+ElectroParkRadio antiguamente llamado ProyectoFM, fue una radio en línea en los años 2013. Estación de música electrónica en vivo, con un chat en tiempo real bajado en NodeJS y websocket. 
 
-La radio ProyectoFM decidio cerrar en el año 2015.
+La radio ProyectoFM decidió cerrar en el año 2015. 
 
-En este proyecto se usa tecnologia gratuita, para que no dependa de gastos de servidores.
+En este proyecto se usa tecnología gratuita, para que no dependa de gastos de servidores. 
 
-1. Servidor Blogger.
-2. Librerias Open Source.
-3. Firebase Chat RealTime.
-4. Github Alojamiento de Scripts.
-5. API Token Youtube.
+1. Servidor Blogger. 
 
+2. Librerias Open Source. 
 
-Diseño web sobre plantilla limipa de Blogger, uso de la libreria Page.js y bootstrap,JQuery.
-Gulp para minificar y empaquetar los archivos JS y CSS, JPlayer para reporoducir la radio y Firebase para el chat en realtime.
+3. Firebase Chat RealTime. 
+
+4. Github Alojamiento de Scripts. 
+
+5. API Token Youtube. 
+
+Diseño web sobre plantilla limpia de Blogger, uso de la librería Page.js y bootstrap,JQuery. 
+
+Gulp para minificar y empaquetar los archivos JS y CSS, JPlayer para reproducir la radio y Firebase para el chat en realtime. 
 
 **Demo:**
 
